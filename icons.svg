@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="294.5" height="89.2" viewBox="0 0 294.5 89.2">
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="294.5" height="89.2" viewBox="0 0 294.5 89.2" xmlns="http://www.w3.org/2000/svg">
   <title>icons</title>
   <g>
-    <path d="M10,23V9h2V23Z" transform="translate(-8.7 -4)"/>
-    <path d="M12,10s3-1,5,1,5,1,5,1v8s-3,1-5-1-5-1-5-1Z" transform="translate(-8.7 -4)"/>
-    <path d="M42,9h4V23H42Z" transform="translate(-8.7 -4)"/>
-    <path d="M49,9h4V23H49Z" transform="translate(-8.7 -4)"/>
-    <path d="M109,23h6l4-4V13l-4-4h-6l-4,4v6Z" transform="translate(-8.7 -4)"/>
-    <path d="M74,9l12,7L74,23Z" transform="translate(-8.7 -4)"/>
+    <path d="M10,23V9h2V23Z" transform="translate(-8.7 -4)" style="fill: rgb(95, 204, 40);"/>
+    <path d="M12,10s3-1,5,1,5,1,5,1v8s-3,1-5-1-5-1-5-1Z" transform="translate(-8.7 -4)" style="fill: rgb(95, 204, 40);"/>
+    <path d="M42,9h4V23H42Z" transform="translate(-8.7 -4)" style="fill: rgb(126, 126, 126);"/>
+    <path d="M49,9h4V23H49Z" transform="translate(-8.7 -4)" style="fill: rgb(126, 126, 126);"/>
+    <path d="M109,23h6l4-4V13l-4-4h-6l-4,4v6Z" transform="translate(-8.7 -4)" style="fill: rgb(222, 19, 19);"/>
+    <path d="M74,9l12,7L74,23Z" transform="translate(-8.7 -4)" style="fill: rgb(78, 146, 235);"/>
     <path d="M169,9h7v2h-5V21h10V16h2v7H169Z" transform="translate(-8.7 -4)"/>
     <path d="M175,15.5l4.5-4.5-2-2H183v5.5l-2-2L176.5,17H175Z" transform="translate(-8.7 -4)"/>
     <path d="M151,9v5.5l-2-2L146.5,15l-.7-.7-.8-.8,2.5-2.5-2-2Z" transform="translate(-8.7 -4)"/>
@@ -41,11 +42,11 @@
     <path d="M151,87h-5.5l2-2L145,82.5l.7-.7.8-.8,2.5,2.5,2-2Z" transform="translate(-8.7 -4)" style="fill: #fff"/>
     <g>
       <path d="M12,72.7H22A3.3,3.3,0,0,1,25.3,76V86A3.3,3.3,0,0,1,22,89.3H12A3.3,3.3,0,0,1,8.7,86V76A3.3,3.3,0,0,1,12,72.7Z" transform="translate(-8.7 -4)" style="fill: #3f3f3f"/>
-      <text transform="translate(4 83)" style="isolation: isolate;font-size: 16.579299926757812px;fill: #fff;font-family: Arial-BoldMT, Arial;font-weight: 700">2</text>
+      <text transform="translate(4 83)" style="isolation: isolate; font-size: 16.5793px; fill: rgb(255, 255, 255); font-family: Arial-BoldMT, Arial; font-weight: 700; white-space: pre;">2</text>
     </g>
     <g>
       <path d="M45,72.7H55A3.3,3.3,0,0,1,58.3,76V86A3.3,3.3,0,0,1,55,89.3H45A3.3,3.3,0,0,1,41.7,86V76A3.3,3.3,0,0,1,45,72.7Z" transform="translate(-8.7 -4)" style="fill: #3f3f3f"/>
-      <text transform="translate(37 83)" style="isolation: isolate;font-size: 16.579299926757812px;fill: #fff;font-family: Arial-BoldMT, Arial;font-weight: 700">3</text>
+      <text transform="translate(37 83)" style="isolation: isolate; font-size: 16.5793px; fill: rgb(255, 255, 255); font-family: Arial-BoldMT, Arial; font-weight: 700; white-space: pre;">3</text>
     </g>
     <g>
       <rect x="64.5" y="82.2" width="16" height="2"/>
