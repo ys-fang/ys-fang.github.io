@@ -1,6 +1,5 @@
 <style>
       body {
-  font: 20px "微軟正黑體", sans-serif;
 }
 blockquote {
   margin: 0 auto;
@@ -8,8 +7,9 @@ blockquote {
 }
 
 p{
-max-width: 75%;
-color: #555;
+      max-width: 75%;
+      color: #555;
+      font: 20px "微軟正黑體", sans-serif;
 
 }
 p.them {
