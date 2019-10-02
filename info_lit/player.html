@@ -24,7 +24,7 @@
           }
           value = unescape(value);
           value.replace(/\+/g," ");
-          return value;
+          return "https://drive.google.com/uc?export=download&id="+value;
         }
     </script>
     <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
@@ -39,8 +39,13 @@
   <body>
   	<div class="videowrapper">
     <video class="afterglow" id="myvideo" width="1920" height="1440" data-skin="dark">
-      <source type="video/mp4" src="https://drive.google.com/uc?export=download&id=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5" />
+      <source type="video/mp4" src= getValue("src") />
     </video>
 	</div>
   </body>
 </html>
+
+<!--      <source type="video/mp4" src="https://drive.google.com/uc?export=download&id=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5" />
+
+  https://ys-fang.github.io/info_lit/player.html?src=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5
+-->
