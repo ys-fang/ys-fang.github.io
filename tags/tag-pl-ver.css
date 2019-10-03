@@ -58,6 +58,17 @@ margin-left: -10px;
 	border-radius:0 10px 10px 0;
 }
 
+.tags version_ai2{
+margin-left: -10px;
+	padding:2px 10px 2px 10px;
+	background:#F88D34;
+	color:#fff;
+	-moz-border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;	
+	border-radius:0 10px 10px 0;
+}
+
+
 .tags newcourse{
 margin-left: 10px;
 padding:2px 10px 2px 10px;
