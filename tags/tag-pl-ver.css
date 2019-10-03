@@ -17,6 +17,17 @@ padding:2px 15px 2px 10px;
 	-webkit-border-left-radius:10px 0 0 10px;	
 	border-radius:10px 0 0 10px;
 }
+
+.tags version_py{
+margin-left: -10px;
+	padding:2px 10px 2px 10px;
+	background:#ffd343;
+	color:#3776ab;
+	-moz-border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;	
+	border-radius:0 10px 10px 0;
+}
+
 .tags version30{
 margin-left: -10px;
 	padding:2px 10px 2px 10px;
