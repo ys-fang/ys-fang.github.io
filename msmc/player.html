@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>afterglow player</title>
+    <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+    <style>
+    	.videowrapper{
+  width: 560px;
+  position:relative;
+  height: auto;
+}
+    </style>
+  </head>
+  <body>
+  	<div class="videowrapper" id="link"></div>
+    <script>
+              function getValue(varname)
+        {
+          var url = window.location.href;
+          var qparts = url.split("?");
+          if (qparts.length == 0){return "";}
+          var query = qparts[1];
+          var vars = query.split("&amp;");
+          var value = "";
+          for (i=0; i<vars.length; i++)
+          {
+            var parts = vars[i].split("=");
+            if (parts[0] == varname)
+            {
+              value = parts[1];
+              break;
+            }
+          }
+          //value = unescape(value);
+          //value.replace(/\+/g," ");
+          return "https://isafe.moe.edu.tw/sites/default/files/"+value;
+          //return value;
+        }
+
+        document.getElementById("link").innerHTML = '    <video class="afterglow" id="myvideo" width="1920" height="1440" data-skin="dark"><source type="video/mp4" src=' + getValue("src") +' /></video>';
+    </script>
+
+  </body>
+</html>
+
+<!--      <source type="video/mp4" src="https://drive.google.com/uc?export=download&id=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5" />
+
+  https://ys-fang.github.io/info_lit/player.html?src=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5
+-->
