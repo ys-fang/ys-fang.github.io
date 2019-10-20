@@ -3,18 +3,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>afterglow player</title>
-    <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
-    <style>
-    	.videowrapper{
-  width: 560px;
-  position:relative;
-  height: auto;
-}
-    </style>
   </head>
   <body>
-  	<div class="videowrapper" id="link"></div>
+  	<div id="link"></div>
     <script>
               function getValue(varname)
         {
@@ -33,19 +24,16 @@
               break;
             }
           }
-          //value = unescape(value);
-          //value.replace(/\+/g," ");
-          return "https://isafe.moe.edu.tw/sites/default/files/"+value;
-          //return value;
+          return "https://makecode.microbit.org/---run?id="+value;
+          // id: _XTKRVwMbEWiW
         }
 
-        document.getElementById("link").innerHTML = '    <video class="afterglow" id="myvideo" width="1920" height="1440" data-skin="dark"><source type="video/mp4" src=' + getValue("src") +' /></video>';
+        document.getElementById("link").innerHTML = '    <iframe style="position:absolute;top:0;left:0;width:400px;height:400px;" src=" ' 
+        + getValue("id") +
+        '" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe>';
+
+
     </script>
 
   </body>
 </html>
-
-<!--      <source type="video/mp4" src="https://drive.google.com/uc?export=download&id=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5" />
-
-  https://ys-fang.github.io/info_lit/player.html?src=1Quoq1E57POe9pr5tywNVCSZEX2C-3WT5
--->
