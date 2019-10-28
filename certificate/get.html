@@ -1,22 +1,41 @@
 
+<div class="SaurveyCake-Survey-embed">
+  <iframe
+    scrolling="no"
+    src="https://www.surveycake.com/s/b9xQ9"
+    allowtransparency="true"
+    frameborder="0"
+  >
+  </iframe>
+</div>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-    	.videowrapper{
-  width: 560px;
-  position:relative;
-  height: auto;
-}
-    </style>
-  </head>
-  <body>
-  	<div class="videowrapper">
+<style type="text/css">
+  .SaurveyCake-Survey-embed {
+    height: 600px; /* This value controls your container height */
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .SaurveyCake-Survey-embed > iframe {
+    width: 100%;
+    height: 11000px; /* This value specify your survey height */
+  }
+</style>
 
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSlNjNvFyrYUb3_tXOEBmR_oBi-ksE2oFINXPFuoxty3DDjA/viewform?embedded=true" width="560" height="911" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      
-    </div>
+<script>
+  window.addEventListener('message', function(event) {
+    var type = event.data ? event.data.type : '';
+    var payload = event.data ? event.data.payload : '';
 
-  </body>
-</html>
+    if (
+      type === 'OPEN_PREVIEW_MODAL' ||
+      ['thankyou', 'ended', 'sorry'].indexOf(payload) !== -1
+    ) {
+      document
+        .querySelectorAll('.SaurveyCake-Survey-embed')
+        .forEach(function(node) {
+          node.scrollTop = 0;
+        });
+    }
+  });
+</script>
+  
