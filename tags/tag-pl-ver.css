@@ -78,3 +78,13 @@ padding:2px 10px 2px 10px;
 	-webkit-border-left-radius:10px 10px 10px 10px;	
 	border-radius:10px 10px 10px 10px;
 }
+
+.tags feature{
+margin-left: 10px;
+padding:2px 10px 2px 10px;
+	background:#ff458a;
+	color:#fff;
+	-moz-border-left-radius:10px 10px 10px 10px;
+	-webkit-border-left-radius:10px 10px 10px 10px;	
+	border-radius:10px 10px 10px 10px;
+}
