@@ -18,6 +18,16 @@ padding:2px 15px 2px 10px;
 	border-radius:10px 0 0 10px;
 }
 
+.tags version_html{
+margin-left: -10px;
+	padding:2px 10px 2px 10px;
+	background:#f0652a;
+	color:#fff;
+	-moz-border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;	
+	border-radius:0 10px 10px 0;
+}
+
 .tags version_py{
 margin-left: -10px;
 	padding:2px 10px 2px 10px;
