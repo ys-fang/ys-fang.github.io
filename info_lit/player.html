@@ -16,7 +16,7 @@
   <body>
   	<div class="videowrapper" id="link"></div>
     <script>
-              function getValue(varname)
+              function getValue(varname) // 處理傳入的mp4影片路徑參數，格式為 ?src=__________________
         {
           var url = window.location.href;
           var qparts = url.split("?");
@@ -29,13 +29,13 @@
             var parts = vars[i].split("=");
             if (parts[0] == varname)
             {
-              value = parts[1];
+              value = parts[1]; // mp4影片路徑 --> 篩選出 ______________________ 
               break;
             }
           }
           //value = unescape(value);
           //value.replace(/\+/g," ");
-          return "https://isafe.moe.edu.tw/sites/default/files/"+value;
+          return "https://isafe.moe.edu.tw/sites/default/files/"+value; // 將mp4路徑，前面都加上"isafe網站的路徑"，這裡可以寫得更彈性
           //return value;
         }
 
