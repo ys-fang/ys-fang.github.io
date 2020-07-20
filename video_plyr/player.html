@@ -1,2 +1,25 @@
 <html>
+  <head>
+  </head>
+  <body>
+     <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
+       <source src="https://sec.ch9.ms/ch9/4849/d5dd9965-a716-4c9f-baa6-42b33d8f4849/Python1_high.mp4" type="video/mp4" size="1080">
+       
+       <!-- Caption files -->
+       <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
+       
+       <!-- Fallback for browsers that don't support the <video> element -->
+       <a href="https://sec.ch9.ms/ch9/4849/d5dd9965-a716-4c9f-baa6-42b33d8f4849/Python1_high.mp4" download>Download</a>
+    
+    </video>
+
+    <script src="path/to/plyr.js"></script>
+    <script>
+      // Change the second argument to your options: https://github.com/sampotts/plyr/#options
+      const player = new Plyr('video', {captions: {active: true}});
+      // Expose player so it can be used from the console
+      window.player = player;
+    </script>
+        
+  </body>
 </html>
