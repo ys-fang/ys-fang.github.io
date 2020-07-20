@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
   </head>
   <body>
      <video controls crossorigin playsinline poster="">
@@ -18,7 +19,7 @@
       // Change the second argument to your options: https://github.com/sampotts/plyr/#options
       const player = new Plyr('video', {captions: {active: true}});
       // Expose player so it can be used from the console
-    //  window.player = player;
+      window.player = player;
     </script>
         
   </body>
