@@ -18,11 +18,12 @@
         function getValue(varname)
         {
           var url = window.location.href;
-          var qparts = url.split("?");
+          var qparts = url.split("?src=");
           if (qparts.length == 0){return "";}
           var querys = qparts[1];
-          var query = querys.split("&");
-          
+          value.src = querys;
+          //var query = querys.split("&");
+          /*
           for (var i=0;i<query.length;i++){
             if(query[i].indexOf("src")>=0){
               value.src = query[i].split("=")[1];
@@ -30,7 +31,7 @@
             else if(query[i].indexOf("title")>=0){
               value.title = query[i].split("=")[1];
             }
-          }
+          }*/
           return value;
           
         }
