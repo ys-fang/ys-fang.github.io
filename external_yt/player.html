@@ -5,12 +5,7 @@
 
   <body onresize="resizeWindow()">
 
-<div class="videowrapper" id="link"></div>
-
-
-<script src="https://apis.google.com/js/platform.js"></script>
-<div class="g-ytsubscribe" data-channelid="UC_vW48pRsAdM72Px8lr5w0Q" data-layout="full" data-theme="dark" data-count="default"></div>
-    
+<div class="videowrapper" id="link"></div>    
 <script>
         var value = {};
         function getValue(varname)
@@ -33,7 +28,7 @@
           
         }
         var w = window.innerWidth-10;
-        var h = window.innerHeight-70;
+        var h = window.innerHeight-20;
         
 //        document.getElementById("link").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/FAkkayvkpGs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';        
       document.getElementById("link").innerHTML = '<iframe width="'+w+'" height="'+h+'" src="https://www.youtube.com/embed/'+getValue("src").src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
@@ -43,7 +38,7 @@
     <script>
   function resizeWindow(){
     nw = window.innerWidth-10;
-    nh = window.innerHeight-70;
+    nh = window.innerHeight-20;
 
       document.getElementById("link").innerHTML = '<iframe width="'+nw+'" height="'+nh+'" src="https://www.youtube.com/embed/'+getValue("src").src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   }
