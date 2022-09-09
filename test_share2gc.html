@@ -6,6 +6,10 @@
     </script>
   </head>
   <body>
-    <g:sharetoclassroom size=32 url="https://google.com"></g:sharetoclassroom>
+    <script>
+      document.write(
+        "<g:sharetoclassroom size=32 url="+window.location.href+"></g:sharetoclassroom>"
+      );
+    </script>
   </body>
 </html>
