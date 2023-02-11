@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube Video Player</title>
+  </head>
+  <body>
+    <div id="player"></div>
+    <button onclick="reloadVideo()">Reload Video</button>
+    <script>
+      function loadVideo() {
+        var params = new URLSearchParams(window.location.search);
+        var video_id = params.get("vid") || "";
+        var start = params.get("s") || "";
+        var end = params.get("e") || "";
+        var url = "https://www.youtube.com/embed/" + video_id + "?controls=0";
+        if (start) {
+          url += "&start=" + start;
+        }
+        if (end) {
+          url += "&end=" + end;
+        }
+        var player = document.getElementById("player");
+        player.innerHTML = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      }
+
+      function reloadVideo() {
+        loadVideo();
+      }
+
+      loadVideo();
+    </script>
+  </body>
+</html>
