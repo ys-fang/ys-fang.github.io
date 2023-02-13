@@ -36,8 +36,15 @@
             hosts.push(host);
             var subdomain = uri.subdomain();
             subdomains.push(subdomain);
-            var hostWithoutSubdomain = host.replace(subdomain + ".", "");
-            hostsWithoutSubdomains.push(hostWithoutSubdomain);
+            if (subdomain == ""){
+              var hostWithoutSubdomain = host.replace(subdomain, "");
+              hostsWithoutSubdomains.push(hostWithoutSubdomain);  
+            }
+            else{
+              var hostWithoutSubdomain = host.replace(subdomain + ".", "");
+              hostsWithoutSubdomains.push(hostWithoutSubdomain);              
+            }
+
           }
           fileDisplayArea.innerText = "Host: \n" + hosts.join("\n") + "\n\n" + "Subdomain: \n" + subdomains.join("\n") + "\n\n" + "Host without Subdomain: \n" + hostsWithoutSubdomains.join("\n");
 //          fileDisplayArea.innerText = "Host without Subdomain: \n" + hostsWithoutSubdomains.join("\n");
