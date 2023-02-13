@@ -1,31 +1,51 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/uri-js@4.2.2/src/URI.min.js"></script>
+    <title>Text File Upload and Display</title>
+    <!-- Include the URI.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.2/URI.min.js"></script>
   </head>
   <body>
-    <h2>Upload a CSV file containing URLs</h2>
-    <input type="file" id="fileInput" />
-    <br><br>
-    <div id="output"></div>
-    
+    <h1>Text File Upload and Display</h1>
+
+    <!-- Form to upload the text file -->
+    <form>
+      <input type="file" id="fileInput">
+      <button type="button" onclick="readTextFile()">Upload</button>
+    </form>
+
+    <!-- Display the contents of the text file -->
+    <pre id="fileDisplayArea"></pre>
+
+    <!-- JavaScript to handle the file upload and display its contents -->
     <script>
-      var fileInput = document.getElementById("fileInput");
-      var outputDiv = document.getElementById("output");
-      
-      fileInput.addEventListener("change", function() {
+      function readTextFile() {
+        var fileInput = document.getElementById("fileInput");
+        var fileDisplayArea = document.getElementById("fileDisplayArea");
+
         var file = fileInput.files[0];
         var reader = new FileReader();
-        reader.readAsText(file);
-        reader.onload = function() {
-          var urls = reader.result.split("\n");
-          for (var i = 0; i < urls.length; i++) {
-            var uri = new URI(urls[i]);
+
+        reader.onload = function (e) {
+          var fileLines = e.target.result.split("\n");
+          var hosts = [];
+          var subdomains = [];
+          var hostsWithoutSubdomains = [];
+          for (var i = 0; i < fileLines.length; i++) {
+            var uri = new URI(fileLines[i]);
             var host = uri.host();
-            outputDiv.innerHTML += host + "<br>";
+            hosts.push(host);
+            var subdomain = uri.subdomain();
+            subdomains.push(subdomain);
+            var hostWithoutSubdomain = host.replace(subdomain + ".", "");
+            hostsWithoutSubdomains.push(hostWithoutSubdomain);
           }
+          fileDisplayArea.innerText = "Host: \n" + hosts.join("\n") + "\n\n" + "Subdomain: \n" + subdomains.join("\n") + "\n\n" + "Host without Subdomain: \n" + hostsWithoutSubdomains.join("\n");
+//          fileDisplayArea.innerText = "Host without Subdomain: \n" + hostsWithoutSubdomains.join("\n");
+
         };
-      });
+
+        reader.readAsText(file);
+      }
     </script>
   </body>
 </html>
