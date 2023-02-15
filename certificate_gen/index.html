@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Webpage</title>
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-		}
+    <title>My Webpage</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-		img {
-			max-width: 100%;
-			max-height: 100%;
-		}
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+        }
 
-		.button {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: auto;
-		}
-	</style>
+        .message-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            display: none;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
-	<div>
-		<img src="./images/beach-quotes.jpg" alt="Beach Quotes Image">
-	</div>
-	<div class="button">
-		<button onclick="downloadImage()">Download</button>
-	</div>
-	<script>
-		function downloadImage() {
-			var link = document.createElement('a');
-			link.href = "./images/beach-quotes.jpg";
-			link.download = "beach-quotes.jpg";
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
-		}
-	</script>
+    <div>
+        <img src="./images/beach-quotes.jpg" alt="Beach Quotes Image">
+        <div class="message-container">
+            <p id="message"></p>
+        </div>
+    </div>
+    <div>
+        <label for="message-input">Enter message:</label>
+        <input type="text" id="message-input">
+        <label for="x-value-input">X-Value:</label>
+        <input type="text" id="x-value-input">
+        <label for="y-value-input">Y-Value:</label>
+        <input type="text" id="y-value-input">
+        <button onclick="submitMessage()">Submit</button>
+    </div>
+    <div class="button">
+        <button onclick="downloadImage()">Download</button>
+    </div>
+    <script>
+        function downloadImage() {
+            var link = document.createElement('a');
+            link.href = getImageDataUrl();
+            link.download = "beach-quotes-with-message.jpg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function getImageDataUrl() {
+            var messageContainer = document.querySelector(".message-container");
+            messageContainer.style.display = "none";
+            var img = document.querySelector("img");
+            var canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            ctx.font = "48px sans-serif";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            var message = document.getElementById("message").innerText;
+            var x = document.getElementById("x-value-input").value;
+            var y = document.getElementById("y-value-input").value;
+            ctx.fillText(message, x, y);
+            var dataUrl = canvas.toDataURL();
+            messageContainer.style.display = "block";
+            return dataUrl;
+        }
+
+        function submitMessage() {
+            var message = document.getElementById("message-input").value;
+            var messageContainer = document.querySelector(".message-container");
+            var messageText = document.getElementById("message");
+            messageText.innerHTML = message;
+            messageContainer.style.display = "block";
+            var xValue = document.getElementById("x-value-input").value;
+            var yValue = document.getElementById("y-value-input").value;
+            messageContainer.style.top = yValue + "px";
+            messageContainer.style.left = xValue + "px";
+        }
+    </script>
 </body>
 </html>
