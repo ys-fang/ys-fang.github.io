@@ -18,10 +18,11 @@ function checkKeywords() {
     }
   }
 
-  var allKeywordsPresent = true;
+  var allKeywordsPresent = false;
   for (var i = 0; i < keywordLists.length; i++) {
     var keywordList = keywordLists[i];
     if (keywordList.some(keyword => stringToBeChecked.includes(keyword))) {
+      allKeywordsPresent = true;
       continue;
     } else {
       allKeywordsPresent = false;
